@@ -11,6 +11,12 @@ framework:
         cookie_secure: auto
         cookie_samesite: lax
         storage_factory_id: session.storage.factory.native
+    http_client:
+        scoped_clients:
+            http_client.api_movie:
+                base_uri: '%env(MOVIE_API_URL)%'
+                verify_peer: false
+                verify_host: false
 
     #esi: true
     #fragments: true

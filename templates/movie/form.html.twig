@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(movieForm) }}
+
+    {{ form_widget(movieForm) }}
+
+    {{ form_end(movieForm) }}
+
+    {% if movie %}
+        {% include 'movie/form-response.html.twig' with {'title': movie.title, 'year': movie.year, 'director': movie.director, 'rating': movie.rating} %}
+    {% endif %}
+{% endblock %}
